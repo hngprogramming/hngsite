@@ -105,6 +105,10 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="SPA\Controllers\MainController.js" />
     <Content Include="SPA\App.js" />
+    <Content Include="SPA\Controllers\GridController.js" />
+    <Content Include="SPA\Views\Grid.html" />
+    <Content Include="SPA\Views\ViewProductWindow.html" />
+    <Content Include="SPA\Controllers\ViewProductController.js" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
