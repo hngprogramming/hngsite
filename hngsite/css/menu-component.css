@@ -1,0 +1,202 @@
+/* Common styles for all menus */
+.menu {
+	line-height: 1;
+	margin: 0 auto 3em;
+}
+
+.menu__list {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-justify-content: flex-end;
+   justify-content: flex-end;
+	padding: 0;
+	list-style: none;
+    margin:0px;
+}
+
+.menu__item {
+	display: block;
+	margin: 1em 0;
+	text-decoration: none;
+}
+
+.menu__link {
+	font-size: 0.9em;
+	font-weight: 500;
+	display: block;
+	padding: 1em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.menu__link:hover,
+.menu__link:focus {
+	outline: none;
+}
+
+/* Individual styles */
+
+/* Caliban */
+.menu--caliban .menu__item {
+	margin: 0.5em 0;
+
+}
+
+.menu--caliban .menu__link {
+	position: relative;
+	display: block;
+	width: 140px;
+	margin: 0 1em;
+	color: #ffffff;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.menu--caliban .menu__link:hover,
+.menu--caliban .menu__link:focus {
+	color: #ff4949;
+}
+
+.menu--caliban .menu__item--current .menu__link {
+	color: #ff4949;
+}
+
+.menu--caliban .menu__link::before,
+.menu--caliban .menu__link::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #ff4949;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.menu--caliban .menu__link::before {
+	border-width: 0 1px;
+	-webkit-transform: scale3d(1, 0, 1);
+	transform: scale3d(1, 0, 1);
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+}
+
+.menu--caliban .menu__link::after {
+	border-width: 1px 0;
+	-webkit-transform: scale3d(0, 1, 1);
+	transform: scale3d(0, 1, 1);
+	-webkit-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+
+.menu--caliban .menu__item--current .menu__link::before,
+.menu--caliban .menu__item--current .menu__link::after {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+}
+
+
+/* End: caliban Styles */
+
+/* Maria */
+
+.menu__list__sub {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-justify-content: flex-end;
+   justify-content: center;
+	padding: 0;
+	list-style: none;
+	border-bottom: #d94f5c solid 1px;
+}
+
+.menu--maria .menu__item {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	margin: auto;
+	text-align: center;
+}
+
+.menu--maria .menu__item::before {
+	content: '';
+	position: absolute;
+	top: 130%;
+	left: -20%;
+	width: 200%;
+	height: 1px;
+	background: #d94f5c;
+	-webkit-transform: rotate3d(0, 0, 1, -45deg) scale3d(0, 1, 1);
+	transform: rotate3d(0, 0, 1, -45deg) scale3d(0, 1, 1);
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+}
+
+.menu--maria .menu__item.menu__item--current::before {
+	-webkit-transform: rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1);
+	transform: rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1);
+}
+
+.menu--maria .menu__link {
+	position: relative;
+    color: #E91E63;
+    -webkit-transition: color 0.4s;
+    transition: color 0.4s;
+    font-size: 21px;
+    font-weight: 300;
+}
+
+.menu--maria .menu__link:hover,
+.menu--maria .menu__link:focus {
+	color: #d94f5c;
+}
+
+.menu--maria .menu__item.menu__item--current .menu__link {
+	color: #333;
+}
+
+/* YOUR STYLE (Shakespeare character name) see README.md for details */
+/* (Please copy these two lines and insert after your custom styles) */
+
+
+/* Name (by @you) */
+
+/* [Your styles here]*/
+
+/* End: Name Styles */
+
+
+/* Media queries */
+
+/* Stack items for smaller screens */
+@media screen and (max-width:55em) {
+	.menu__list {
+		display: block;
+		margin: 0 auto;
+	}
+}

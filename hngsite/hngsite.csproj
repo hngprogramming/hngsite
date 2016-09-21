@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,6 +9,17 @@
     <RootNamespace>hngsite</RootNamespace>
     <AssemblyName>hngsite</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -76,11 +87,6 @@
   <ItemGroup>
     <Folder Include="Content\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\" />
-    <Folder Include="css\" />
-    <Folder Include="SPA\" />
-    <Folder Include="SPA\Controllers\" />
-    <Folder Include="SPA\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -91,6 +97,51 @@
     <Compile Include="App_Start\RouteConfig.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap-iso.css" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\menu-component.css" />
+    <Content Include="css\menu-section.css" />
+    <Content Include="css\mycss.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\style1.css" />
+    <Content Include="css\timeline.css" />
+    <Content Include="css\titled-content-component.css" />
+    <Content Include="img\1_mobile.jpg" />
+    <Content Include="img\1_screen.jpg" />
+    <Content Include="img\2_mobile.jpg" />
+    <Content Include="img\2_screen.jpg" />
+    <Content Include="img\3_mobile.jpg" />
+    <Content Include="img\3_screen.jpg" />
+    <Content Include="img\4_mobile.jpg" />
+    <Content Include="img\4_screen.jpg" />
+    <Content Include="img\5_mobile.jpg" />
+    <Content Include="img\5_screen.jpg" />
+    <Content Include="img\6_mobile.jpg" />
+    <Content Include="img\6_screen.jpg" />
+    <Content Include="img\background\bg-pattern.png" />
+    <Content Include="img\background\bg-pattern1.png" />
+    <Content Include="img\cd-arrow.svg" />
+    <Content Include="img\line.svg" />
+    <Content Include="img\link.svg" />
+    <Content Include="img\mouse.svg" />
+    <Content Include="img\myprofile.jpg" />
+    <Content Include="img\related\ButtonStylesInspiration.png" />
+    <Content Include="img\related\CreativeLinkEffects.png" />
+    <Content Include="img\related\LinkStylesHoverEffects.jpg" />
+    <Content Include="img\related\TextInputEffects.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\classie.js" />
+    <Content Include="Scripts\clipboard.min.js" />
+    <Content Include="Scripts\modernizr.custom.js" />
+    <Content Include="Scripts\modernizr.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\tiltSlider.js" />
+    <Content Include="Scripts\timeline.js" />
+    <Content Include="SPA\Controllers\SubMenuController.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Web.config" />
@@ -110,6 +161,16 @@
     <Content Include="SPA\Views\ViewProductWindow.html" />
     <Content Include="SPA\Controllers\ViewProductController.js" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index - Copy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="css\style1.css.map" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>
@@ -117,5 +178,22 @@
         <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
       </Properties>
     </MonoDevelop>
+    <VisualStudio>
+      <FlavorProperties GUID="{349C5851-65DF-11DA-9384-00065B846F21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63822/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications\Microsoft.WebApplication.targets" />
 </Project>

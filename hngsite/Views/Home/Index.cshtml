@@ -8,8 +8,14 @@
 	    
 	    <script src="~/Scripts/bootstrap.min.js"></script>
 	    <script src="~/Scripts/ui-bootstrap-tpls-1.1.2.min.js"></script>
-	    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
-	    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="~/css/bootstrap-iso.css">
+        <link rel="stylesheet" type="text/css" href="~/css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/menu-section.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/menu-component.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/mycss.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/titled-content-component.css" />
+        <script src="~/Scripts/modernizr.custom.js"></script>
 
 		<script src="~/Scripts/Chart.min.js"></script>
     	<script src="~/Scripts/angular-chart.min.js"></script>
@@ -19,43 +25,76 @@
 		<script src="~/SPA/Controllers/GridController.js"></script>
 		<script src="~/SPA/Controllers/MainController.js"></script>
 		<script src="~/SPA/App.js"></script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-7243260-2']);
+            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
 	</head>
 
 	<body ng-app="App" ng-controller="MainController">
-		<nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Location</a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{selectedLocation.Location}}<span class="caret"></span></a>
-
-                            <ul class="dropdown-menu">
-                                <li ng-repeat="x in models.locations" ng-click="changeLocation(x)"><a>{{x.Location}}</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Search</button>
-                    </div>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
+        <section class="section section--menu" id="Caliban">
+            <nav class="menu menu--caliban">
+                <ul class="menu__list">
+                    <li class="menu__item menu__item--current"><a href="#/aboutme" class="menu__link">About Me</a></li>
+                    <li class="menu__item"><a href="#/whatidid" class="menu__link">What I did</a></li>
+                    <li class="menu__item"><a href="#/whatiamdoing" class="menu__link">What I'm doing</a></li>
+                    <li class="menu__item"><a href="#/myfutureplan" class="menu__link">My Future Plan</a></li>
+                    <li class="menu__item"><a href="#/others" class="menu__link">Others</a></li>
+                </ul>
+            </nav>
+        </section>
 		<div ng-view> </div>
+        <script src="~/Scripts/classie.js"></script>
+        <script src="~/Scripts/tiltSlider.js"></script>
+        <script src="~/Scripts/clipboard.min.js"></script>
+        <script>
+
+        try{
+            new TiltSlider(document.getElementById('slideshow'));
+        }catch(err){
+
+        }
+        (function () {
+            [].slice.call(document.querySelectorAll('.menu')).forEach(function (menu) {
+                var menuItems = menu.querySelectorAll('.menu__link'),
+					setCurrent = function (ev) {
+					    ev.preventDefault();
+
+					    var item = ev.target.parentNode; // li
+
+					    // return if already current
+					    if (classie.has(item, 'menu__item--current')) {
+					        return false;
+					    }
+					    // remove current
+					    classie.remove(menu.querySelector('.menu__item--current'), 'menu__item--current');
+					    // set current
+					    classie.add(item, 'menu__item--current');
+					};
+
+                [].slice.call(menuItems).forEach(function (el) {
+                    el.addEventListener('click', setCurrent);
+                });
+            });
+
+            [].slice.call(document.querySelectorAll('.link-copy')).forEach(function (link) {
+                link.setAttribute('data-clipboard-text', location.protocol + '//' + location.host + location.pathname + '#' + link.parentNode.id);
+                new Clipboard(link);
+                link.addEventListener('click', function () {
+                    classie.add(link, 'link-copy--animate');
+                    setTimeout(function () {
+                        classie.remove(link, 'link-copy--animate');
+                    }, 300);
+                });
+            });
+        })(window);
+        </script>
 	</body>
 	
 </html>

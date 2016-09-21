@@ -6,16 +6,13 @@ App.controller('ViewProductController', ViewProductController);
 
 var configFunction = function ($routeProvider, $httpProvider) {
     $routeProvider.
-        when('/home', {
-            templateUrl: 'SPA/Views/home.html',
-            controller: HomeController
-        })
-        .when('/aboutme', {
-            templateUrl: 'SPA/Views/aboutme.html'
+        when('/grid', {
+            templateUrl: 'SPA/Views/Grid.html',
+            controller: GridController
         })
        .otherwise({
            redirectTo: function () {
-               return '/home';
+               return '/grid';
            }
        });
 }
