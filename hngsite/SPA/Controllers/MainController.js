@@ -1,4 +1,5 @@
-var MainController = function ($scope){
+var MainController = function ($scope, $location) {
+    /*
     $scope.models = {
     	locations: [
     		{id: "1", Location: "UK Warehouse"},
@@ -11,7 +12,10 @@ var MainController = function ($scope){
 
     $scope.changeLocation = function (loc) {
     	$scope.selectedLocation = loc;
+    }*/
+    $scope.getSection = function (section) {
+        $location.path(section);
     }
 };
 
-MainController.$inject = ['$scope'];
+MainController.$inject = ['$scope', '$location'];

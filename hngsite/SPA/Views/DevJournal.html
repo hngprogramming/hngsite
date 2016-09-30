@@ -1,0 +1,20 @@
+﻿<div class="bootstrap-iso">
+    <div class="container-fluid container-alignment">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <nav class="menu menu--maria">
+                    <ul class="menu__list__sub" >
+                        <li submenu-repeat-directive ng-repeat="item in menu.items" class="menu__item" ng-class="{'menu__item--current':item.IsSelected}"><a href="" class="menu__link">{{item.name}}</a></li>
+                    </ul>
+                    <!--ul class="menu__list__sub">
+                        <li class="menu__item menu__item--current"><a href="" ng-click="getSelected()" class="menu__link">Home</a></li>
+                        <li class="menu__item"><a href="" ng-click="getSelected()" class="menu__link">Java</a></li>
+                        <li class="menu__item "><a href="" ng-click="getSelected()" class="menu__link">C#</a></li>
+                        <li class="menu__item"><a href="" ng-click="getSelected()" class="menu__link">Mobile</a></li>
+                        <li class="menu__item"><a href="" ng-click="getSelected()" class="menu__link">Other</a></li>
+                    </!--ul-->
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

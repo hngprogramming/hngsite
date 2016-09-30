@@ -1,0 +1,67 @@
+﻿<div class="bootstrap-iso">
+    <div class="container-fluid container-alignment">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+                <h1>Hung Nguyen, <small>BSc Hons Computer Science</small></h1>
+                <h2>Application Developer, a hands-on developer who loves learning new technologies.</h2>
+                <h2 class="lead">Hello everyone,</h2>
+                <h2 class="lead text-justify">First of all, thank you for visiting my portfolio. Let me introduce a bit about myself. I graduated from SAIT 2016 with Diploma in Software Development, before that I got a Bachelor Of Science Computing from University of Greenwich. I finished my Bachelor Degree in my home country before moving to Canada and taking Software Development courses.</h2>
+                <h2 class="lead text-justify">
+                    During years at school, I used Java, SQL, Javascript for all of my projects and I can say that I am proficient in Java. Also, I've been trying a lot of other things: IOS Objective-C or Swift, RESTful (JAX-RS), Ruby On Scale, etc. And now, I am focusing on C# MVC, Microsoft services (Logic App, PowerApps, etc.), and a bit of Angular. So it's understandable to see most of the posts I post is about Microsoft services.</h3>
+                    <h2 class="lead text-justify">I'm always curious about how things work and try to figure it out. Also, I love solving problems, the harder they are, the more I'm into. Participating in HackerRank helps my brain stay in shape by solving problems from the website. One of the challeges from HackerRank is that we have to think of test cases to find the best solution. One of my future goal is to solve more and more problems.</h2>
+                    <h2 class="lead text-justify">About this portfolio, as you can see, About Me is the page you're reading. What I did is the page where I post projects I was in, the problems/solution, tips, tricks I used to get the work done. Then, What I'm doing is the place where I update my current work and state. Finally, I will talk about my plans, what I am going to do in the future, simple as that. FYI, this portfolio is built using C# MVC (.NET Framework 4.5), Angular, Bootstrap. Other CSS or JS features are collected from Codrops which is a great website about web design. I customed some of them in order to fit in this project.</h2>
+
+            </div>
+            <div class="col-md-4">
+                <img src="img/myprofile.jpg" alt="Hung Nguyen" class="img-thumbnail img-circle img-responsive img-thumbnail-extra">
+                <a style="float: right; margin-left: 25px;" href="https://www.linkedin.com/?trk=nav_logo"><i class="fa fa-linkedin fa-3x"></i></a>
+                <a style="float:right;" href="mailto:Hung.Nguyen@edu.sait.ca" style="margin-left:25px;"><i class="fa fa-envelope fa-3x"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/classie.js"></script>
+<script src="~/Scripts/tiltSlider.js"></script>
+<script src="~/Scripts/clipboard.min.js"></script>
+<script>
+
+        try{
+            new TiltSlider(document.getElementById('slideshow'));
+        }catch(err){
+
+        }
+        (function () {
+            [].slice.call(document.querySelectorAll('.menu')).forEach(function (menu) {
+                var menuItems = menu.querySelectorAll('.menu__link'),
+					setCurrent = function (ev) {
+					    ev.preventDefault();
+
+					    var item = ev.target.parentNode; // li
+
+					    // return if already current
+					    if (classie.has(item, 'menu__item--current')) {
+					        return false;
+					    }
+					    // remove current
+					    classie.remove(menu.querySelector('.menu__item--current'), 'menu__item--current');
+					    // set current
+					    classie.add(item, 'menu__item--current');
+					};
+
+                [].slice.call(menuItems).forEach(function (el) {
+                    el.addEventListener('click', setCurrent);
+                });
+            });
+
+            [].slice.call(document.querySelectorAll('.link-copy')).forEach(function (link) {
+                link.setAttribute('data-clipboard-text', location.protocol + '//' + location.host + location.pathname + '#' + link.parentNode.id);
+                new Clipboard(link);
+                link.addEventListener('click', function () {
+                    classie.add(link, 'link-copy--animate');
+                    setTimeout(function () {
+                        classie.remove(link, 'link-copy--animate');
+                    }, 300);
+                });
+            });
+        })(window);
+</script>

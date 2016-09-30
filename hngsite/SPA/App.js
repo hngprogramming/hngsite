@@ -1,17 +1,18 @@
 var App = angular.module('App', ['ngRoute', 'ui.bootstrap']);
 
 App.controller('MainController', MainController);
-App.controller('GridController', GridController);
-App.controller('ViewProductController', ViewProductController);
+App.controller('JournalController', JournalController);
+//App.controller('GridController', GridController);
+//App.controller('ViewProductController', ViewProductController);
 
 var configFunction = function ($routeProvider, $httpProvider) {
     $routeProvider.
         when('/home', {
-            templateUrl: 'SPA/Views/home.html',
-            controller: HomeController
+            templateUrl: 'SPA/Views/AboutMe.html'
         })
-        .when('/aboutme', {
-            templateUrl: 'SPA/Views/aboutme.html'
+        .when('/journal', {
+            templateUrl: 'SPA/Views/DevJournal.html',
+            controller: JournalController
         })
        .otherwise({
            redirectTo: function () {

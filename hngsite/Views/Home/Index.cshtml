@@ -21,7 +21,7 @@
     	<script src="~/Scripts/angular-chart.min.js"></script>
     	<link href="~/css/angular-chart.min.css" rel="stylesheet" />
 
-		<script src="~/SPA/Controllers/ViewProductController.js"></script>
+		<script src="~/SPA/Controllers/JournalController.js"></script>
 		<script src="~/SPA/Controllers/GridController.js"></script>
 		<script src="~/SPA/Controllers/MainController.js"></script>
 		<script src="~/SPA/App.js"></script>
@@ -41,11 +41,10 @@
         <section class="section section--menu" id="Caliban">
             <nav class="menu menu--caliban">
                 <ul class="menu__list">
-                    <li class="menu__item menu__item--current"><a href="#/aboutme" class="menu__link">About Me</a></li>
-                    <li class="menu__item"><a href="#/whatidid" class="menu__link">What I did</a></li>
-                    <li class="menu__item"><a href="#/whatiamdoing" class="menu__link">What I'm doing</a></li>
-                    <li class="menu__item"><a href="#/myfutureplan" class="menu__link">My Future Plan</a></li>
-                    <li class="menu__item"><a href="#/others" class="menu__link">Others</a></li>
+                    <li class="menu__item menu__item--current"><a href="" ng-click="getSection('/home')" class="menu__link">About Me</a></li>
+                    <li class="menu__item"><a href="" ng-click="getSection('/journal')" class="menu__link">Dev Journal</a></li>
+                    <li class="menu__item"><a ng-href="#projects" class="menu__link">Projects</a></li>
+                    <li class="menu__item"><a ng-href="#others" class="menu__link">Others</a></li>
                 </ul>
             </nav>
         </section>
